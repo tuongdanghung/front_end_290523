@@ -27,8 +27,9 @@
     font-weight: 500;
 }
 
-.personal_information {
+.left ul li {
     margin-bottom: 15px;
+    list-style: none;
 }
 
 .right {
@@ -56,12 +57,22 @@
     width: 25%;
 }
 
-.right p {
+.right ul li {
+    list-style: none;
     margin-top: 20px;
 }
 
 .right h3 {
     margin-top: 30px;
+}
+
+.right details {
+    margin-top: 20px;
+}
+
+.right details summary {
+    font-weight: 700;
+    font-size: 18.72px;
 }
 
 .right .flex {
