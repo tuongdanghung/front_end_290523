@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Reseach Survey</title>
+</head>
+
+<body>
+    <style>
+        select {
+            width: 50%;
+        }
+
+        form .money {
+            display: flex;
+        }
+
+        #cent {
+            width: 30px;
+        }
+
+        #dollar {
+            width: 90px;
+        }
+
+        .dollar-cover {
+            margin-left: 10px;
+        }
+
+        .bg-grey {
+            background-color: rgba(128, 128, 128, 0.468);
+        }
+
+        table,
+        td,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        tr td:first-child {
+            text-align: left;
+        }
+
+        th:nth-child(n+2) {
+            width: 150px;
+        }
+
+        textarea {
+            width: 50%;
+        }
+    </style>
+    <h1>
+        Market Reseach Survey
+    </h1>
+    <p>please take a few moments to complete this satisfaction survey.</p>
+    <hr>
+    <form action="bai2.html" method="get">
+        <div class="age-drop-box">
+            <strong>what is your age range ?</strong>
+            <br>
+            <select name="age" id="age">
+                <option value="1824">18 - 24</option>
+                <option value="2430">24 - 30</option>
+                <option value="3040">30 - 40</option>
+                <option value="4050">40 - 50</option>
+            </select>
+        </div>
+        <div>
+            <strong>what is your age range ?</strong>
+            <br>
+            <select name="salary" id="salary">
+                <option value="1824">0 - 24.000</option>
+                <option value="2430">24.000 - 30.000</option>
+                <option value="3040">30.000 - 40.000</option>
+                <option value="4050">40.000 - 50.000</option>
+            </select>
+        </div>
+        <section>
+            <label>Gender</label>
+            <div>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" name="gender" id="female" value="">
+                <label for="female">Female</label>
+            </div>
+        </section>
+        <section>
+            <h3>which of the following products have your purchased in the last 2 months. Please check all the apply.
+            </h3>
+            <input type="checkbox" name="products1" id="products1">
+            <label for="products1">products1</label>
+            <br>
+            <input type="checkbox" name="gender" id="products2">
+            <label for="products2">products2</label>
+            <br>
+            <input type="checkbox" name="gender" id="products3">
+            <label for="products3">products3</label>
+        </section>
+        <section>
+            <h3>which of the following products have your purchased in the last 2 months. Please check all the apply.
+            </h3>
+            <input type="radio" name="products" id="daily">
+            <label for="daily">daily</label>
+            <br>
+            <input type="radio" name="products" id="weekly">
+            <label for="weekly">products2</label>
+            <br>
+            <input type="radio" name="products" id="monthly">
+            <label for="monthly">products3</label>
+        </section>
+        <section>
+            <h3> what would you like to see in the new product </h3>
+            <div class="money">
+                <label for="money"><strong>&#36;</strong></label>
+                <div class="dollar-cover">
+                    <input type="number" name="dollar" id="dollar"><br>
+                    <label for="dollar">Dollar</label>
+                </div>
+                <strong>&#8901;</strong>
+                <div>
+                    <input type="number" name="cent" id="cent"><br>
+                    <label for="cent">Cent</label>
+                </div>
+            </div>
+        </section>
+        <div>
+            <h3>
+                what would you pay for the new product ?
+            </h3>
+            <textarea name="features" id="features" cols="30" rows="10"></textarea>
+        </div>
+
+        <!-- ------------ TABLE ----------- -->
+
+        <table>
+            <caption>
+                Please rate your level of agreement with the following statement
+            </caption>
+            <tbody>
+                <tr class="bg-grey">
+                    <th></th>
+                    <th><strong>Strongly Disagree</strong></th>
+                    <th><strong>Disagree</strong></th>
+                    <th><strong>Agree</strong></th>
+                    <th><strong>Strongly Agree</strong></th>
+                </tr>
+                <tr>
+                    <td>our products are priced fairly</td>
+                    <td><input type="radio" name="">1</td>
+                    <td><input type="radio" name="">2</td>
+                    <td><input type="radio" name="">3</td>
+                    <td><input type="radio" name="">4</td>
+                </tr>
+                <tr class="bg-grey">
+                    <td>our products are high quality </td>
+                    <td><input type="radio" name="">1</td>
+                    <td><input type="radio" name="">2</td>
+                    <td><input type="radio" name="">3</td>
+                    <td><input type="radio" name="">4</td>
+                </tr>
+                <tr>
+                    <td> you would recomend our products are priced or coworker. </td>
+                    <td><input type="radio" name="">1</td>
+                    <td><input type="radio" name="">2</td>
+                    <td><input type="radio" name="">3</td>
+                    <td><input type="radio" name="">4</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit" value="sumit" id="sumit">
+    </form>
+</body>
+
+</html>

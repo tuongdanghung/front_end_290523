@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        table,
+        td,
+        th {
+            border-collapse: collapse;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        td {
+            height: 50px;
+            width: 90px;
+        }
+
+        thead th:first-child {
+            background-color: red;
+        }
+
+        thead th:nth-child(n+2) {
+            background-color: yellow;
+        }
+
+        thead th:nth-child(n+7) {
+            background-color: blue;
+        }
+
+        table tbody tr td:first-child span {
+            color: red;
+        }
+
+        table tbody tr td:last-child span {
+            color: blue;
+        }
+    </style>
+    <table>
+        <caption> tháng 6 </caption>
+        <thead>
+            <th>Chủ nhật</th>
+            <th> thứ 2</th>
+            <th> thứ 3</th>
+            <th> thứ 4</th>
+            <th> thứ 5</th>
+            <th> thứ 6</th>
+            <th> thứ 7</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <span></span> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td> <span>3</span> </td>
+            </tr>
+            <tr>
+                <td> <span>4</span> </td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td> <span>10</span> </td>
+            </tr>
+            <tr>
+                <td><span>11</span></td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td> <span>17</span> </td>
+            </tr>
+            <tr>
+                <td> <span>18</span> </td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td> <span>24</span> </td>
+            </tr>
+            <tr>
+                <td> <span> 25 </span> </td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td> <span>31</span> </td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>

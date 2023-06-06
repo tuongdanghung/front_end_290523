@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .text {
+        padding-bottom: 40px;
+    }
+
+    .btn-sumit {
+        margin-left: 60px;
+    }
+</style>
+
+<body>
+    <div>
+        <h2>sở thích của bạn </h2>
+        <form>
+            <table>
+                <tr>
+                    <td>họ và tên</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input type="email"></td>
+                </tr>
+                <tr>
+                    <td class="text">sở thích</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><input type="checkbox">thể thao</td>
+                                <td><input type="checkbox">thể thao</td>
+                                <td><input type="checkbox">thể thao</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox">thể thao</td>
+                                <td><input type="checkbox">thể thao</td>
+                                <td><input type="checkbox">thể thao</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox">thể thao</td>
+                                <td><input type="checkbox">thể thao</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <div class="btn-sumit">
+                    <input type="submit" value="gửi thông tin">
+                    <input type="reset" value="nhập lại">
+                </div>
+            </table>
+        </form>
+    </div>
+
+    <h2>phần 2</h2>
+    <form action="#">
+        <h3>Đăng ký hội viên</h3>
+        <table>
+            <tr>
+                <td><label for="userName">Họ và tên</label></td>
+                <td><input type="text" id="userName" name="userName"></td>
+            </tr>
+            <tr>
+                <td><label for="birthDay"> ngày sinh </label></td>
+                <td><input type="date" id="birthDay" name="birthDay"></td>
+            </tr>
+            <tr>
+                <td><label></label>Giới tính</td>
+                <td><input type="radio" id="male" name="gender" value="0"> <label for="male">nam</label><input
+                        type="radio" id="female" name="gender" value="1"> <label for="female">nữ</label></td>
+            </tr>
+            <tr>
+                <td><label for="address"></label> Địa chỉ </td>
+                <td><textarea name="address" id="address" cols="20" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="class"></label>lớp</td>
+                <td>
+                    <select id="class">
+                        <option value="hn">--chọn lớp--</option>
+                        <option value="hn">Hà Nội</option>
+                        <option value="hp">Hải Phòng</option>
+                        <option value="dn">Đà Nẵng</option>
+                        <option value="sg">Sài Gòn</option>
+                        <option value="ct">Cần Thơ</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">email</label></td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label for="tel">tel</label></td>
+                <td><input type="tel" name="tel" id="tel"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="sumit"><input type="reset" value="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
