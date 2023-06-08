@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        gap: 10px;
+        column-gap: 20px;
+        display: grid;
+        /* grid-template-columns: repeat(3,1fr); */
+        grid-template-areas: "header header header"
+            "nav nav nav"
+            "aside section section"
+            "footer footer footer";
+    }
+
+    header {
+        grid-area: header;
+        height: 200px;
+        border: 2px solid green;
+    }
+
+    nav {
+        grid-area: nav;
+        height: 200px;
+        border: 2px solid green;
+    }
+
+    aside {
+        grid-area: aside;
+        border: 2px solid green;
+    }
+
+    section {
+        grid-area: section;
+        border: 2px solid green;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        border: 1px solid red;
+    }
+
+    footer {
+        grid-area: footer;
+        height: 200px;
+        border: 2px solid green;
+    }
+
+
+    @media only screen and (max-width: 900px) {
+
+        section {
+            grid-area: section;
+            border: 2px solid green;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            display: grid;
+            /* grid-template-columns: repeat(3,1fr); */
+            grid-template-areas: "header header header"
+                "nav nav nav"
+                "aside aside aside"
+                "section section section"
+                "footer footer footer";
+        }
+
+        section {
+            grid-area: section;
+            border: 2px solid green;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+    }
+</style>
+
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+    <aside>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+    </aside>
+    <section>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+    </section>
+    <footer>footer</footer>
+</body>
+
+</html>
