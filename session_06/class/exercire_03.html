@@ -87,12 +87,7 @@
         color: white
     }
 
-
-    @media screen and (max-width: 600px) {}
-
-    /*  */
-
-    .grid-container {
+    section {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 10px;
@@ -111,9 +106,33 @@
         width: 100%;
     }
 
+    aside {
+        grid-area: aside;
+        border: 2px solid green;
+    }
+
+    section {
+        grid-area: section;
+        border: 2px solid green;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        border: 1px solid red;
+    }
+
+    footer {
+        grid-area: footer;
+        height: 200px;
+        border: 2px solid green;
+    }
+
     @media only screen and (max-width: 900px) {
 
-        .grid-container {
+        section {
             grid-template-columns: repeat(3, 1fr);
         }
     }
@@ -157,14 +176,27 @@
             display: inline-block;
         }
 
-        .grid-container {
+        section {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        body {
+            grid-template-areas: "header header header"
+                "nav nav nav"
+                "aside aside aside"
+                "section section section"
+                "footer footer footer";
+        }
+
+        section {
             grid-template-columns: repeat(2, 1fr);
         }
     }
 
     @media only screen and (max-width: 429px) {
-
-        .grid-container {
+        section {
             grid-template-columns: repeat(1, 1fr);
         }
     }
@@ -190,7 +222,20 @@
             </ul>
         </div>
     </header>
-    <!-- <div class="grid-container">
+    <nav>nav</nav>
+    <aside>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+    </aside>
+    <section>
         <div class="item"><img
                 src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
                 alt="" title="xxxx">
@@ -274,7 +319,9 @@
                 aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
                 eveniet inventore.</p>
         </div>
-    </div> -->
+    </section>
+    <footer>footer</footer>
+
 </body>
 
 </html>
