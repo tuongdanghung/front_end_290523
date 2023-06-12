@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    body {
+        gap: 10px;
+        column-gap: 20px;
+        display: grid;
+        /* grid-template-columns: repeat(3,1fr); */
+        grid-template-areas: "header header header header"
+            "nav nav nav nav"
+            "aside section section section"
+            "footer footer footer footer";
+    }
+
+    header {
+        grid-area: header;
+        height: 200px;
+        border: 2px solid green;
+    }
+
+    nav {
+        grid-area: nav;
+        height: 200px;
+        border: 2px solid green;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: darkslateblue;
+    }
+
+    .logo-text {
+        color: white;
+    }
+
+    .hamburger-icon {
+        border: none;
+        background-color: transparent;
+    }
+
+    .hamburger-icon .fa-bars,
+    .hamburger-icon .fa-x {
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .hamburger-icon input[type="checkbox"] {
+        appearance: none;
+    }
+
+    .navigation {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .navigation a {
+        color: white
+    }
+
+    .item {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    aside {
+        grid-area: aside;
+        border: 2px solid green;
+    }
+
+    section {
+        grid-area: section;
+        border: 2px solid green;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        grid-gap: 10px;
+        background-color: #222425;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        border: 1px solid red;
+    }
+
+    footer {
+        grid-area: footer;
+        height: 200px;
+        border: 2px solid green;
+    }
+
+    @media only screen and (max-width: 900px) {
+
+        section {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .top-nav {
+            display: block;
+        }
+
+        .navigation {
+            height: 0;
+            overflow: hidden;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hamburger-icon {
+            display: block;
+        }
+
+        .fa-x {
+            display: none;
+        }
+
+        .top-nav:has(.hamburger-icon input[type="checkbox"]:checked) .navigation {
+            margin-top: 1rem;
+            height: 100px;
+        }
+
+        .top-nav:has(.hamburger-icon input[type="checkbox"]:checked) .fa-bars {
+            display: none;
+        }
+
+        .top-nav:has(.hamburger-icon input[type="checkbox"]:checked) .fa-x {
+            display: inline-block;
+        }
+
+        section {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        body {
+            grid-template-areas: "header header header"
+                "nav nav nav"
+                "aside aside aside"
+                "section section section"
+                "footer footer footer";
+        }
+
+        section {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (max-width: 429px) {
+        section {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="top-nav">
+            <div class="logo">
+                <h1 class="logo-text">LOGO</h1>
+                <button class="hamburger-icon">
+                    <label for="dropdown">
+                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-x"></i>
+                    </label>
+                    <input type="checkbox" id="dropdown" />
+                </button>
+            </div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <nav>nav</nav>
+    <aside>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            suscipit recusandae
+            veritatis labore iure amet magni, fuga ut atque nulla aliquam laborum iste ipsum. Nihil assumenda vitae
+            reprehenderit minima dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi ipsa, numquam
+            omnis sapiente eligendi aperiam debitis molestiae commodi quasi dolorem quo necessitatibus placeat,
+            excepturi sit amet corrupti minima dolore.</div>
+    </aside>
+    <section>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="" title="xxxx">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://stevbros.edu.vn/nhung-nang-cong-chua-xinh-dep-hoat-hinh-winx/imager_3068.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventoreádsadadasdadsa.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+        <div class="item"><img
+                src="https://webaffiliatevn.com/wp-content/uploads/2020/08/IMGLOGO_Primary_CMYK_Blue_Rel_webready.jpg"
+                alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat voluptatem, veritatis dignissimos
+                aut illo, nemo ex perspiciatis ea optio consequatur ipsam sapiente maiores deleniti quam tempora nisi
+                eveniet inventore.</p>
+        </div>
+    </section>
+    <footer>footer</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h2>Select Card</h2>
+            <div class="content">
+                <ul>
+                    <li><a href="">Summary</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+                <div class="desc">
+                    <div class="top_desc">
+                        <div class="top_desc_left">
+                            <h1>Elite status</h1>
+                            <span>Points enamels in 2020</span>
+                        </div>
+                        <div class="top_desc_right">
+                            <h3>18.592</h3>
+                            <span>(month 37 usd)</span>
+                        </div>
+                    </div>
+                    <p class="title">25usd in the ...</p>
+                    <div class="row">
+                        <div class="col col-1">1</div>
+                        <div class="col col-2">2</div>
+                        <div class="col col-3">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        width: 800px;
+        border: 1px solid #000000;
+        padding: 30px;
+        background-color: #cccccc75;
+    }
+
+    ul {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    ul li a {
+        text-decoration: none;
+        display: block;
+        padding: 0 30px 30px;
+    }
+
+    .desc {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    .top_desc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top_desc h1,
+    .top_desc h3 {
+        margin: 0;
+    }
+
+    .top_desc p {
+        margin: 0;
+    }
+
+    .top_desc_right {
+        margin-left: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        text-align: center;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-around
+    }
+
+    .col {
+        width: 20%;
+        height: 60px;
+        border-radius: 5px;
+        margin: auto;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col-1 {
+        background-color: #2307dd;
+    }
+
+    .col-2 {
+        background-color: #FF8A49;
+    }
+
+    .col-3 {
+        background-color: #00D17A;
+    }
+</style>

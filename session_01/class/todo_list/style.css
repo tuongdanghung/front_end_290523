@@ -1,0 +1,38 @@
+input {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.add {
+    background: #59ac59;
+    color: #eee;
+    padding: 5px 15px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.item {
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    padding: 10px;
+    list-style: none;
+    width: 150px;
+    display: flex;
+}
+
+.item p {
+    margin-right: 10px;
+}
+
+.del {
+    background: #0f51f8;
+    color: #eee;
+    padding: 5px 15px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+}

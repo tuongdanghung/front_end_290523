@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="parent">
+        <li><a href="#">My dashboard </a></li>
+        <li><a href="#"> Likes </a></li>
+        <li class="views"><a href="#">Views </a>
+            <ul class="chill">
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Upload</a></li>
+        <li class="video"><a href="#">Videos</a>
+            <ul class="chill-forcus">
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+<style>
+    ul {
+        padding: 0;
+    }
+
+    ul.parent {
+        display: flex;
+        background-color: black;
+        width: 467px;
+    }
+
+    ul.parent li {
+        list-style: none;
+        border: 1px solid #fff;
+    }
+
+    ul.parent li:hover {
+        background-color: red;
+    }
+
+    ul.parent li a {
+        text-decoration: none;
+        padding: 10px 20px;
+        display: block;
+        color: #fff;
+    }
+
+    .views {
+        position: relative;
+    }
+
+    ul.chill {
+        display: none;
+        background-color: black;
+        position: absolute;
+        width: 200px;
+    }
+
+    ul.parent li:hover ul.chill {
+        display: block;
+    }
+
+    .video {
+        position: relative;
+    }
+
+    .chill-forcus {
+        display: none;
+        position: absolute;
+        width: 200px;
+        background-color: black;
+    }
+
+    ul.parent .video:focus-within .chill-forcus {
+        display: block;
+    }
+</style>
+
+</html>

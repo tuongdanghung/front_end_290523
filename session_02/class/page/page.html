@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* html{
+        background-image: linear-gradient(#FC5E55, #FA4083);
+      } */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h3 {
+        text-align: center;
+      }
+      nav {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        height: 100px;
+      }
+      .content{
+        text-align: center;
+        width: 500px;
+        height: 300px;
+        border: 5px solid #4a3aff;
+        border-radius: 10px;
+        margin:0 auto ;
+        padding: 100px;
+      }
+      ul {
+        width: 500px;
+        height: 100px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style-type: none;
+      }
+
+      section {
+        height: 500px;
+      }
+      .navbutton {
+        text-align: center;
+        padding: 16px 16px;
+        color: #211f54;
+      }
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight:10px;
+      }
+      li:nth-child(4) {
+        background-color: #4a3aff;
+        border: 2px solid #4a3aff;
+        padding: 10px 40px;
+        color: white;
+        border-radius: 20px;
+      }
+      li:nth-child(4) a {
+        color: white;
+      }
+      #about{
+        background-color: #f4cba2;
+      }
+      #music{
+        background-color: #E3F4F4;
+      }
+      #video{
+        background-color: #D2E9E9;
+      }
+      .map{
+        width: 1024px;  
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 250px;
+      }
+      
+    </style>
+    <!-- -------------------------------------------------------- -->
+    <header>
+      <!-- <div>
+            <img src="./image/pngwing.com.png" alt="logo">
+        </div> -->
+
+      <nav>
+        <a href="./page.html"
+          ><img
+            src="./assets/image/pngwing.com.png"
+            alt="logo"
+            height="100px"
+            width="100px"
+        /></a>
+        <div class="navbutton">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="./bai3.html">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- about -->
+      <section id="about">
+        <div class="content">
+          <h3>đây là web site của tôi</h3>
+            <p>
+              Lazada được xem là một trong kênh mua sắm điện tử online được người
+              dùng tin tưởng và quan tâm nhiều nhất bởi hệ thống kết nối giữa người
+              mua và người bán thông minh, tối ưu hóa nhất. Cùng Thế Giới Di Động
+              điểm qua các tính năng nổi bật từ ứng dụng mua sắm này nhé.
+            </p>
+            <div>
+              <button><a href="./about.html">View more</a></button>
+            </div>
+        </div>
+        
+        
+      </section>
+      <!-- music -->
+      <section id="music">
+        <div class="content">
+          <h3>đây là web dùng để nghe nhạc</h3>
+          <p>
+            Lazada được xem là một trong kênh mua sắm điện tử online được người
+            dùng tin tưởng và quan tâm nhiều nhất bởi hệ thống kết nối giữa người
+            mua và người bán thông minh, tối ưu hóa nhất. Cùng Thế Giới Di Động
+            điểm qua các tính năng nổi bật từ ứng dụng mua sắm này nhé.
+          </p>
+          <div>
+            <button><a href="./listmusic.html">listen music list</a></button>
+          </div>
+        </div>
+        
+       
+      </section>
+      <!-- video -->
+      <section id="video">
+        <div class="content">
+          <h3>đây là web dùng để xem video</h3>
+          <p>
+            Việc YouTube là trang web video phổ biến không có gì phải bàn cãi. Các
+            video phổ biến nhất trên YouTube đã có hàng tỷ lượt xem. Nhưng điều gì
+            xảy ra nếu YouTube không thể truy cập được? Hoặc đơn giản bạn chỉ muốn
+            có thêm tùy chọn để xem video trực tuyến? Có những lựa chọn thay thế
+            nào cho Youtube? Hiện nay, video là một phần rất lớn của trải nghiệm
+            trực tuyến, nơi có rất nhiều tùy chọn khả dụng. Dưới đây là một số lựa
+            chọn thay thế tuyệt vời dành cho YouTube.
+          </p>
+          <div>
+            <button><a href="./listaudio.html">watch video list</a></button>
+          </div>
+        </div>
+       
+        
+      </section>
+
+      <section>
+        <h3>địa chỉ liên hệ với tôi tại</h3>
+        <div class="map">
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.557543759375!2d108.20760737505265!3d16.036532084638274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219f87a9b59a3%3A0x9facbddbe287013a!2zUmlra2VpIEFjYWRlbXkgxJDDoCBO4bq1bmc!5e0!3m2!1svi!2s!4v1685676931744!5m2!1svi!2s"
+          width="1024"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        
+      </section>
+    </main>
+  </body>
+</html>
