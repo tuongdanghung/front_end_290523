@@ -23,28 +23,54 @@
         // const sum = chieuCao / Math.pow(canNang, 2)
         // console.log(chieuCao, canNang, sum)
 
-        switch (new Date().getDay()) {
-            case 0:
-                console.log(day = "Chủ Nhật");
-                break;
-            case 1:
-                console.log(day = "Thứ hai");
-                break;
-            case 2:
-                console.log(day = "Thứ ba");
-                break;
-            case 3:
-                console.log(day = "Thứ tư");
-                break;
-            case 4:
-                console.log(day = "Thứ năm");
-                break;
-            case 5:
-                console.log(day = "Thứ sáu");
-                break;
-            case 6:
-                console.log(day = "Thứ bảy");
-                break;
+        // switch (new Date().getDay()) {
+        //     case 0:
+        //         console.log(day = "Chủ Nhật");
+        //         break;
+        //     case 1:
+        //         console.log(day = "Thứ hai");
+        //         break;
+        //     case 2:
+        //         console.log(day = "Thứ ba");
+        //         break;
+        //     case 3:
+        //         console.log(day = "Thứ tư");
+        //         break;
+        //     case 4:
+        //         console.log(day = "Thứ năm");
+        //         break;
+        //     case 5:
+        //         console.log(day = "Thứ sáu");
+        //         break;
+        //     case 6:
+        //         console.log(day = "Thứ bảy");
+        //         break;
+        // }
+
+        // const age = +prompt("a")
+        // if (age >= 18) {
+        //     const b = prompt("b")
+        //     if (b == "nam") {
+        //         console.log(b);
+        //     } else if (b == "nu") {
+        //         console.log(b);
+        //     } else {
+        //         console.log("sai")
+        //     }
+        // } else {
+        //     console.log("sai")
+        // }
+
+        const kg = +prompt("kg")
+        const m = +prompt("m")
+        const sum = kg / Math.pow(m, 2)
+        // console.log(sum);
+        if (sum < 18.5) {
+            console.log("nhe can")
+        } else if (sum > 18.5 && sum < 24.9) {
+            console.log("bt")
+        } else if (sum > 25) {
+            console.log("thua can")
         }
     </script>
 </body>
