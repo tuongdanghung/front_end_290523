@@ -8,7 +8,85 @@
 </head>
 
 <body>
-
+    <button onclick="demo(1)">click</button>
+    <button onclick="demo2()">click_2</button>
+    <fieldset>
+        <legend>electron:</legend>
+        <input type="text" id="electronNumber">
+        <button id="sum" onclick="electron()">send</button>
+        <p>thanh tien : <span id="money"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>dong ho thuc:</legend>
+        <p>time : <span id="showTime"></span></p>
+    </fieldset>
+    <fieldset>
+        <legend>dong ho dem nguoc:</legend>
+        <p>time : <span id="countdown"></span></p>
+        <button id="time" onclick="count()">button</button>
+    </fieldset>
 </body>
 
 </html>
+<script>
+    function demo(a) {
+        // function chỉ được chạy khi được gọi
+        return a
+    }
+
+    function demo2() {
+        const mathMark = Number(prompt("nhap"))
+        console.log(mathMark);
+    }
+
+    // const electron = Number(prompt("input electron"))
+
+
+
+    // console.log(price);
+
+
+    function clock() {
+        var inputElement = document.getElementById("electronNumber");
+        var price = 0
+        const rank_1 = 50 * 1700
+        const rank_2 = 100 * 1800
+        const rank_3 = 100 * 1900
+        const rank_4 = 100 * 2000
+        const rank_5 = 100 * 2200
+        var value = Number(inputElement.value)
+        if (value <= 50) {
+            price = (value - 50) * 1.700 + rank_1
+        } else if (value <= 100) {
+            price = (value - 100) * 1.800 + rank_2
+        } else if (value <= 200) {
+            price = (value - 100) * 1900 + rank_3
+        } else if (value <= 300) {
+            price = (value - 100) * 200 + rank_4
+        } else if (value <= 400) {
+            price = (value - 100) * 2200 + rank_5
+        }
+        document.getElementById("money").innerHTML = price.toLocaleString()
+    }
+
+    setInterval(function () {
+        document.getElementById("showTime").innerHTML = new Date().toLocaleString()
+    }, 1000)
+
+    function count() {
+        const now = Number(prompt("input time"))
+        var time = now * 60
+        const intervalId = setInterval(function () {
+            time--;
+            const minutes = parseInt(time / 60)
+            const seconds = time % 60
+            document.getElementById("countdown").innerHTML = minutes + ":" + seconds
+            if (time <= 0) {
+                clearInterval(intervalId);
+                return console.log("het gio");
+            }
+
+        }, 1000);
+    }
+
+</script>

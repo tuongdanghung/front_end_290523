@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        column-gap: 20px;
+        display: grid;
+        grid-template-areas:
+            "nav"
+            "header"
+            "section"
+            "section"
+            "footer";
+        font-family: sans-serif;
+    }
+
+    header {
+        grid-area: header;
+        height: 200px;
+        border: 2px solid green;
+
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        width: 1200px;
+        margin: auto;
+        grid-area: nav;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        margin: 0;
+        align-items: center;
+
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 20px;
+        color: #A5A7C0;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        color: #dc3545;
+    }
+
+    nav button {
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: #ffff;
+        border-radius: 5px;
+        border: 0;
+        outline: none;
+    }
+
+    .logo {
+        font-size: 20px;
+        color: #A5A7C0;
+        margin: 0;
+    }
+
+    .banner {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .overlay {
+        background: linear-gradient(to top, #000, transparent 100%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        display: flex;
+    }
+
+    .banner video {
+        width: 100%;
+    }
+
+    .content-head {
+        display: flex;
+        width: 1200px;
+        margin: auto;
+    }
+
+    .left-header,
+    .right-header {
+        flex: 1;
+    }
+
+    .left-header h1 {
+        font-size: 80px;
+    }
+
+    .left-header p {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 1320px;
+        margin-top: 60px;
+        margin: auto;
+    }
+
+    .container h2 {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    section {
+        grid-area: section;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    section {
+        grid-area: section;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card h3 {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .card .reviews-text {
+        display: flex;
+        padding: 0 20px;
+        justify-content: space-around
+    }
+
+    .card span {
+        font-size: 18px;
+    }
+
+    footer {
+        grid-area: footer;
+        background-image: url("https://www.tooplate.com/templates/2129_crispy_kitchen/images/daan-evers-tKN1WXrzQ3s-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 50px;
+        position: relative;
+    }
+
+    .container-footer {
+        padding-top: 112px;
+        padding-bottom: 112px;
+        background-color: #0000009c;
+    }
+
+    .full-footer {
+        width: 1200px;
+        margin: auto;
+    }
+
+    .full-footer h3 {
+        color: #fff;
+        font-size: 40px;
+    }
+
+    .full-footer h6 {
+        font-size: 30px;
+        color: #fff;
+        margin: 20px 0;
+    }
+
+    .full-footer p {
+        color: #fff;
+    }
+
+    footer .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+    }
+
+
+    @media only screen and (max-width: 900px) {
+
+        section {
+            grid-area: section;
+            border: 2px solid green;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            display: grid;
+            /* grid-template-columns: repeat(3,1fr); */
+            grid-template-areas: "header header header"
+                "nav nav nav"
+                "aside aside aside"
+                "section section section"
+                "footer footer footer";
+        }
+
+        section {
+            grid-area: section;
+            border: 2px solid green;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            Crispy Kitchen
+        </div>
+        <ul>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 1</a></li>
+        </ul>
+        <button>
+            <a>Reservation</a>
+        </button>
+    </nav>
+    <div class="banner">
+        <video autoplay muted loop id="myVideo">
+            <source src="https://www.tooplate.com/templates/2129_crispy_kitchen/video/production_ID_3769033.mp4"
+                type="video/mp4">
+        </video>
+        <div class="overlay">
+            <div class="content-head">
+                <div class="left-header">
+                    <h1>Delicious Steaks</h1>
+                    <p> 4.4/5 *****</p>
+                    <p>From <b>1,206+</b> Customer Reviews</p>
+                </div>
+                <div class="right-header">
+                    <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/slide/jason-leung-O67LZfeyYBk-unsplash.jpg"
+                        alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </header>
+    <div class="container">
+        <h2>Special Menus</h2>
+        <section>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <h2>News & Events</h2>
+        <section>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.tooplate.com/templates/2129_crispy_kitchen/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    alt="">
+                <h3>Morning Fresh</h3>
+                <div class="reviews-text">
+                    <span>4.3/5 *****</span>
+                    <span>102 Reviews</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container-footer">
+            <div class="full-footer">
+                <h3>Crispy Kitchen</h3>
+                <div class="content">
+
+                    <div class="card">
+                        <h6>Location</h6>
+                        <p>121 Einstein Loop N, Bronx, NY 10475, United States</p>
+                    </div>
+                    <div class="card">
+                        <h6>Opening Hours</h6>
+                        <p>121 Einstein Loop N, Bronx, NY 10475, United States</p>
+                        <p>10:00 AM - 08:00 PM</p>
+                        <p>Tel: 010-02-0340</p>
+                    </div>
+                    <div class="card">
+                        <h6>Social</h6>
+                        <p>121 Einstein Loop N, Bronx, NY 10475, United States</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

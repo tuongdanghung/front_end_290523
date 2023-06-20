@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Amount</label>
+    <input type="text" id="amount">
+    <!--  -->
+    <label for="">Currency</label>
+    <select name="" id="curency">
+        <option value="vn">VN</option>
+        <option value="usa">USA</option>
+        <option value="kor">KOR</option>
+    </select>
+    <!--  -->
+    <label for=""> get Currency</label>
+    <select name="" id="getCurency">
+        <option value="vnd">VN</option>
+        <option value="usd">USA</option>
+        <option value="kod">KOR</option>
+    </select>
+    <!--  -->
+    <button id="submit" onclick="total()">submit</button>
+</body>
+<script>
+    function total() {
+        const amount = document.getElementById("amount").value
+        var curency = document.getElementById("curency").value;
+        var getCurency = document.getElementById("getCurency").value;
+        let price = 0
+        if (curency === "vn" && getCurency === "usd") {
+            price = amount / 23000
+        } else if (curency === "vn" && getCurency === "kod") {
+            price = amount / 20000
+        } else if (curency === "usa" && getCurency === "vnd") {
+            price = amount * 23000
+        } else if (curency === "usa" && getCurency === "kod") {
+            price = amount * 20000
+        } else if (curency === "kor" && getCurency === "vnd") {
+            price = amount * 20000
+        } else if (curency === "kor" && getCurency === "usd") {
+            price = amount / 10000
+        } else {
+            return
+        }
+        console.log(price);
+    }
+</script>
+
+</html>

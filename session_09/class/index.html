@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>BMI:</legend>
+        <p>bmi : <span id="bmi"></span></p>
+        <button onclick="handleBmi()">button</button>
+    </fieldset>
+    <fieldset>
+        <legend>Date:</legend>
+        <p>day : <span id="time"></span></p>
+        <button onclick="dateTime()">button</button>
+    </fieldset>
+    <fieldset>
+        <legend>Month:</legend>
+        <p>month of day : <span id="time"></span></p>
+        <button onclick="month()">button</button>
+    </fieldset>
+    <fieldset>
+        <legend>Tien dien:</legend>
+        <input type="text" id="electronNumber">
+        <p>thanh tien : <span id="money"></span> VND</p>
+        <button onclick="electron()">button</button>
+    </fieldset>
+    <fieldset>
+        <legend>Tien te</legend>
+        <label for="">Amount</label>
+        <input type="text" id="amount">
+        <!--  -->
+        <label for="">Currency</label>
+        <select name="" id="curency">
+            <option value="vn">VN</option>
+            <option value="usa">USA</option>
+            <option value="kor">KOR</option>
+        </select>
+        <!--  -->
+        <label for=""> get Currency</label>
+        <select name="" id="getCurency">
+            <option value="vnd">VN</option>
+            <option value="usd">USA</option>
+            <option value="kod">KOR</option>
+        </select>
+        <!--  -->
+        <p>so tien chuyen doi là : <span id="moneys"></span></p>
+        <!--  -->
+        <button id="submit" onclick="total()">submit</button>
+    </fieldset>
+    <fieldset>
+        <legend>vong lap:</legend>
+        <button onclick="loop()">button</button>
+    </fieldset>
+    <fieldset>
+        <legend>vong lap:</legend>
+        <button onclick="fizzBuzz()">button</button>
+    </fieldset>
+</body>
+
+</html>
+<script src="./main.js"></script>

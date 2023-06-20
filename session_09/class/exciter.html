@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <img id="anh1" src='./img/Gau 1.jpg' height="100" width="600" onclick="changeImage1()" /><br>
+    <img id="anh2" src='./img/Cat 2.jpg' height="79" width="600" onclick="changeImage2()" /><br>
+    <img id="anh3" src='./img/Khi 3.jpg' height="79" width="600" onclick="changeImage3()" />
+</body>
+<script>
+    let stt1 = 0;
+    let stt2 = 1;
+    let stt3 = 2;
+    let img1 = document.getElementById('anh1');
+    let img2 = document.getElementById('anh2');
+    let img3 = document.getElementById('anh3');
+
+    function changeImage1() {
+        stt1++;
+        if (stt1 == 1) {
+            img1.src = './img/Cat 1.jpg';
+        } else if (stt1 == 2) {
+            img1.src = './img/Khi 1.jpg';
+        } else {
+            stt1 = 0;
+            img1.src = './img/Gau 1.jpg'
+        }
+        console.log('count1 trong ham 1 -- ', stt1)
+        checkShadow()
+    }
+
+    function changeImage2() {
+        stt2++;
+        if (stt2 == 1) {
+            img2.src = './img/Cat 2.jpg';
+        } else if (stt2 == 2) {
+            img2.src = './img/Khi 2.jpg';
+        } else {
+            stt2 = 0;
+            img2.src = './img/Gau 2.jpg'
+        }
+        checkShadow()
+    }
+
+    function changeImage3() {
+        stt3++;
+        if (stt3 == 1) {
+            img3.src = './img/Cat 3.jpg';
+        } else if (stt3 == 2) {
+            img3.src = './img/Khi 3.jpg';
+        } else {
+            stt3 = 0;
+            img3.src = './img/Gau 3.jpg'
+        }
+        checkShadow()
+    }
+
+    function checkShadow() {
+        if (stt1 == stt2 && stt2 == stt3) {
+            img1.style.border = '5px solid red';
+            img2.style.border = '5px solid red';
+            img3.style.border = '5px solid red';
+        } else {
+            img1.style.border = '5px solid blue';
+            img2.style.border = '5px solid blue';
+            img3.style.border = '5px solid blue';
+        }
+    }
+</script>
+
+</html>
+<!-- khi click vào một hình nó sẽ lấy được id của hình đó
+nếu 3 id trùng nhau thì là đúng
+-->
