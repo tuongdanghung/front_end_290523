@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thực hành 5 - Tạo band cờ caro đơn giản</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame"></p>
+    <input type="number" placeholder="Nhập kích thước bàn cờ" id="size" />
+    <button onclick="handleSize()">Tạo</button>
+    <br />
+    <br />
+    <table id="myTable"></table>
+    <script>
+        const array = new Array(size);
+        let count = 0;
+        let num = 2;
+        // Create game 2
+        function handleSize() {
+            const table = document.getElementById("myTable");
+            num =
+                Number(
+                    prompt("Nhập số lượng  điểm sẽ thắng (>= 3 và <= 6)")
+                ) - 1;
+
+            if (table.querySelector("tr")) {
+                return alert("Please refresh!");
+            }
+            if (num < 2 || num > 5) {
+                return alert(
+                    " Vui lòng nhập số điểm thắng trong phạm vi >= 3 và <= 6"
+                );
+            }
+            const size = document.querySelector("#size").value;
+            if (Number(size) < 5 || Number(size) > 40) {
+                return alert(
+                    "Size cờ vượt quá kích thước, vui lòng nhập trong khoảng 5 đến 40 "
+                );
+            }
+
+            for (let i = 0; i < size; i++) {
+                const tr = document.createElement("tr");
+                array[i] = [];
+                for (let j = 0; j < size; j++) {
+                    array[i][j] = "-";
+                    const td = document.createElement("td");
+                    td.setAttribute("onclick", "handleClick(this)");
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            return array;
+        }
+        let step = false;
+        function handleClick(element) {
+            //Detect row, col
+            const indexCol = Array.from(
+                element.parentElement.children
+            ).indexOf(element);
+            const indexRow = Array.from(
+                element.closest("tr").parentElement.children
+            ).indexOf(element.closest("tr"));
+            if (!step) {
+                element.style.background = "red";
+                element.innerHTML = "x";
+                element.onclick = null;
+                step = !step;
+                array[indexRow][indexCol] = "x";
+                try {
+                    checkRow("x", indexRow, indexCol, array);
+                    checkCol("x", indexRow, indexCol, array);
+                    checkDiagonal("x", indexRow, indexCol, array);
+                    checkDiagonalOther("x", indexRow, indexCol, array);
+
+                } catch (e) { }
+            } else {
+                element.style.background = "green";
+                element.innerHTML = "o";
+                element.onclick = null;
+                step = !step;
+                array[indexRow][indexCol] = "o";
+                try {
+                    checkRow("o", indexRow, indexCol, array);
+                    checkCol("o", indexRow, indexCol, array);
+                    checkDiagonal("o", indexRow, indexCol, array);
+                    checkDiagonalOther("o", indexRow, indexCol, array);
+                } catch (e) { }
+            }
+        }
+
+        function checkRow(value, row, col, array) {
+            for (let i = -num; i <= num; i++) {
+                if (
+                    array[row][col + i] === array[row][col + i + 1] &&
+                    array[row][col + i] === value
+                ) {
+                    count++;
+                    if (count >= num) {
+                        return alert("Người đánh " + value + " thắng!!!");
+                    }
+                } else {
+                    count = 0;
+                }
+            }
+        }
+        function checkCol(value, row, col, array) {
+            for (let i = -num; i <= num; i++) {
+                if (
+                    array[row + i][col] === array[row + i + 1][col] &&
+                    array[row + i][col] === value
+                ) {
+                    count++;
+                    if (count >= num) {
+                        return alert("Người đánh " + value + " thắng!!!");
+                    }
+                } else {
+                    count = 0;
+                }
+            }
+        }
+        function checkDiagonal(value, row, col, array) {
+            for (let i = -num; i <= num; i++) {
+                if (
+                    array[row - i][col + i] ===
+                    array[row - i - 1][col + i + 1] &&
+                    array[row - i][col + i] === value
+                ) {
+                    count++;
+                    if (count >= num) {
+                        return alert("Người đánh " + value + " thắng!!!");
+                    }
+                } else {
+                    count = 0;
+                }
+            }
+        }
+        function checkDiagonalOther(value, row, col, array) {
+            for (let i = -num; i <= num; i++) {
+                if (
+                    array[row + i][col + i] ===
+                    array[row + i + 1][col + i + 1] &&
+                    array[row + i][col + i] === value
+                ) {
+                    count++;
+                    if (count >= num) {
+                        return alert("Người đánh " + value + " thắng!!!");
+                    }
+                } else {
+                    count = 0;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

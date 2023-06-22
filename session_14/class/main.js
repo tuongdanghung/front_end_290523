@@ -89,14 +89,30 @@ function ex_3() {
     console.log(str)
 }
 function ex_4() {
-    let string = prompt("nhap")
-    let str = ''
-    for (let i = 0; i < string.length; i++) {
-        if (string[i] == string[i].toUpperCase()) {
-            str += string[i].toLowerCase()
+    let translate = document.getElementById("translate").value
+    let eng = ['hello', 'world', 'good']
+    let vie = ['xin chào', 'thế giới', 'tốt']
+    for (let i = 0; i < eng.length; i++) {
+        if (translate == eng[i]) {
+            console.log(eng[i], "-----", vie[i]);
         } else {
-            str += string[i].toUpperCase()
+            console.log("nhap sai")
         }
     }
-    console.log(str)
 }
+function ex_5() {
+    let area = document.getElementById("area").value
+    let strArr = " Tôi Là Một Thằng Ngốc!"
+    let str = "";
+
+    let array = strArr.split('');
+    for (let i = 0; i < area.length; i++) {
+        str = str + array[i];
+        if (str.length === strArr.length) {
+            str = ""
+        }
+    }
+    console.log(str);
+    document.getElementById("area").value = str;
+}
+

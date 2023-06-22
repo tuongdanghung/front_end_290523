@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Add new</h1>
+        <input type="text" placeholder="search" id="searchValue" oninput="search()">
+        <div class="form">
+            <input type="text" placeholder="new product" id="value">
+            <button onclick="create()">add</button>
+        </div>
+        <h2>display</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Product name</th>
+                    <th><span id="length"></span> length</th>
+                </tr>
+            </thead>
+            <tbody id="results"></tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+<style>
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 20px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgba(208, 207, 207, 0.279);
+    }
+
+    button {
+        background-color: rgb(0, 173, 0);
+        background-origin: none;
+        padding: 11px 20px;
+        border: none;
+        color: #fff;
+    }
+
+    input {
+        width: 300px;
+        padding: 10px;
+    }
+</style>
+<script src="./crud.js"></script>
