@@ -19,6 +19,7 @@ function ex_2() {
     function prime(number) {
         const nums = number.split(",");
         for (let i = 0; i < nums.length; i++) {
+            console.log(i);
             const num = parseInt(nums[i]);
             let isPrime = true;
             for (let j = 2; j < num; j++) {
@@ -93,4 +94,26 @@ function ex_4() {
         document.getElementById('rectangle').style.height = num + "px"
         document.getElementById('rectangle').style.border = "1px solid black"
     }
+}
+
+function ex_5() {
+    const number = +prompt("Enter a number")
+    console.log(Math.pow(number, 2));
+}
+function ex_6() {
+    const number = prompt("Enter a number")
+    const newNumber = Array.from(number)
+    let symm = true;
+
+    for (let i = 0; i < newNumber.length; i++) {
+        if (newNumber[i] != newNumber[newNumber.length - i - 1]) {
+            symm = false;
+            break;
+        }
+    }
+
+    if (symm)
+        console.log("so doi xung");
+    else
+        console.log("so khong doi xung");
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <label>email</label>
+            </td>
+            <td>
+                <input type="email" id="email"> <br><br>
+                <span id="valid-email">chua nhap email</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>name</label>
+            </td>
+            <td>
+                <input type="text" id="value"> <br><br>
+                <span id="valid-name">chưa nhập name</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>password</label>
+            </td>
+            <td>
+                <input type="password" id="password"> <br><br>
+                <span id="valid-password">chưa nhập password</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>repeat-password</label>
+            </td>
+            <td>
+                <input type="password" id="repeat-password"> <br><br>
+                <span id="valid-repeat-password">chưa nhập repeat-password</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <button onclick="submit()" id="isCheckButton">add</button>
+            </td>
+        </tr>
+    </table>
+    <h1>login</h1>
+    <table>
+        <tr>
+            <td>
+                <label>email</label>
+            </td>
+            <td>
+                <input type="email" id="login-email"> <br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>name</label>
+            </td>
+            <td>
+                <input type="text" id="login-password"> <br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="submitLogin()" id="isCheckButton">add</button>
+                <div class="grid-container" id="album"></div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+<script src="./index2.js"></script>
+
+<style>
+    img {
+        width: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
+    .grid-container>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+    #valid-repeat-password,
+    #valid-password,
+    #valid-name,
+    #valid-email {
+        color: red;
+        display: none;
+    }
+</style>
+
+</html>

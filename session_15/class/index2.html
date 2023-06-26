@@ -91,25 +91,25 @@
                 element.onclick = null;
                 step = !step;
                 array[indexRow][indexCol] = "x";
-                try {
-                    checkRow("x", indexRow, indexCol, array);
-                    checkCol("x", indexRow, indexCol, array);
-                    checkDiagonal("x", indexRow, indexCol, array);
-                    checkDiagonalOther("x", indexRow, indexCol, array);
 
-                } catch (e) { }
+                checkRow("x", indexRow, indexCol, array);
+                checkCol("x", indexRow, indexCol, array);
+                checkDiagonal("x", indexRow, indexCol, array);
+                checkDiagonalOther("x", indexRow, indexCol, array);
+
+
             } else {
                 element.style.background = "green";
                 element.innerHTML = "o";
                 element.onclick = null;
                 step = !step;
                 array[indexRow][indexCol] = "o";
-                try {
-                    checkRow("o", indexRow, indexCol, array);
-                    checkCol("o", indexRow, indexCol, array);
-                    checkDiagonal("o", indexRow, indexCol, array);
-                    checkDiagonalOther("o", indexRow, indexCol, array);
-                } catch (e) { }
+
+                checkRow("o", indexRow, indexCol, array);
+                checkCol("o", indexRow, indexCol, array);
+                checkDiagonal("o", indexRow, indexCol, array);
+                checkDiagonalOther("o", indexRow, indexCol, array);
+
             }
         }
 
@@ -160,6 +160,8 @@
             }
         }
         function checkDiagonalOther(value, row, col, array) {
+            console.log(row, col);
+
             for (let i = -num; i <= num; i++) {
                 if (
                     array[row + i][col + i] ===

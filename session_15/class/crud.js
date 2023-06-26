@@ -12,8 +12,11 @@ function create() {
     if (editIndex !== -1) {
         arr[editIndex] = newValue;
         editIndex = -1;
+        document.getElementById('value').value = ''
+        document.getElementById('isCheckButton').innerHTML = 'Add'
     } else {
         arr.push(newValue)
+        document.getElementById('value').value = ''
     }
     render(arr)
     renderLength(arr)
@@ -22,6 +25,7 @@ function create() {
 function edit(index) {
     const value = arr[index];
     document.getElementById('value').value = value
+    document.getElementById('isCheckButton').innerHTML = 'edit'
     editIndex = index;
 }
 
@@ -41,8 +45,9 @@ function render(data) {
 const searchValue = document.getElementById('searchValue');
 function search() {
     const newValue = searchValue.value
-    const filter = arr.filter((item) => item.includes(newValue))
+    const filter = arr.filter((item) => item.toLowerCase().includes(newValue.toLowerCase()))
     render(filter)
+    renderLength(filter)
 }
 
 function renderLength(index) {

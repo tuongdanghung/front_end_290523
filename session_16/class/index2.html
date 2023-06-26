@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="value">
+    <button onclick="submit()" id="isCheckButton">add</button>
+    <div class="grid-container" id="album"></div>
+</body>
+<script src="./index2.js"></script>
+
+</html>
+<style>
+    img {
+        width: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
+    .grid-container>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+</style>
