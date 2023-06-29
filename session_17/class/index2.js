@@ -1,7 +1,6 @@
 const data = local();
-let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 let passwordFormat = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$/;
-
 // function render() {
 //     let newContent = ''
 //     data.forEach((item, index) => {
@@ -14,11 +13,11 @@ let passwordFormat = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]
 //         <button onclick="handleDelete(${index})">delete</button>
 //         </div>`
 //     });
-//     document.querySelector('#album').innerHTML = newContent
+//     document.getElementById('album').innerHTML = newContent
 // }
 function handleDelete(index) {
     data.splice(index, 1)
-    render(data)
+    // render(data)
     const myArrayJson = JSON.stringify(data);
     localStorage.setItem('data', myArrayJson);
 }
@@ -55,17 +54,13 @@ function submit() {
     } else {
         let newValue = {}
         if (data.length === 0) {
-            newValue = { id: data.length, email: email, name: value, password: password, repeatPassword: repeatPassword }
+            newValue = { id: 0, email: email, name: value, password: password, repeatPassword: repeatPassword }
         } else {
             const maxId = Math.max(...data.map(item => item.id));
-            // tìm id lớn nhất
             newValue = { id: maxId + 1, email: email, name: value, password: password, repeatPassword: repeatPassword }
         }
         validate(newValue)
     }
-    const myArrayJson = JSON.stringify(data);
-    localStorage.setItem('data', myArrayJson);
-    render(data)
 }
 function validate(params) {
     let isValid = false
@@ -77,8 +72,8 @@ function validate(params) {
         isValid = true
         document.getElementById('valid-email').style.display = 'block'
     }
-    if (!mailformat.test(params.email) && params.email.length !== 0) {
-        document.getElementById('valid-email').innerHTML = 'chưa đúng định dạng'
+    if (!mailFormat.test(params.email) && params.email !== '') {
+        document.getElementById('valid-email').innerHTML = 'chưa đúng định dạngxx'
         document.getElementById('valid-email').style.display = 'block'
         isValid = true;
     }
@@ -101,6 +96,10 @@ function validate(params) {
             const index = data.findIndex(el => el.email === params.email)
             if (index === -1) {
                 data.push(params)
+                const myArrayJson = JSON.stringify(data);
+                localStorage.setItem('data', myArrayJson);
+                // render(data)
+
                 document.getElementById('valid-name').style.display = 'none'
                 document.getElementById('valid-email').style.display = 'none'
                 document.getElementById('valid-password').style.display = 'none'
@@ -111,7 +110,7 @@ function validate(params) {
                 document.getElementById('password').value = ''
                 document.getElementById('repeat-password').value = ''
             } else {
-                document.getElementById('valid-email').innerHTML = 'chưa đúng định dạng'
+                document.getElementById('valid-email').innerHTML = 'email da dang ky'
                 document.getElementById('valid-email').style.display = 'block'
             }
         } else {
@@ -125,7 +124,6 @@ function submitLogin() {
     const password = document.getElementById('login-password').value
     const value = { email: loginEmail, password: password }
     const user = data.find(el => el.email === value.email && el.password === value.password)
-    console.log(user);
     if (user) {
         alert("login thanh cong")
     } else {
@@ -138,5 +136,4 @@ function local() {
     const myArray = JSON.parse(results);
     return myArray ? myArray : []
 }
-
-// render()
+// render() 

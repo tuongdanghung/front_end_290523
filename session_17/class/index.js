@@ -65,7 +65,7 @@ const imageUrl = [
 
 function render() {
     let newContent = ''
-    imageUrl.forEach((item, index) => {
+    imageUrl.forEach((item) => {
         newContent += `<div>
         <img src="${item.img}" alt="">
         <p>${item.name}</p>
@@ -76,17 +76,23 @@ function render() {
     });
     document.querySelector('#album').innerHTML = newContent
 }
-function handleDelete(index) {
-    imageUrl.splice(index, 1)
-    render(imageUrl)
+function handleDelete(id) {
+    const updatedArray = imageUrl.find(item => item.id === id);
+    if (updatedArray.id === id) {
+        const index = imageUrl.indexOf(updatedArray);
+        imageUrl.splice(index, 1);
+    }
+    render(updatedArray);
 }
 
 let editIndex = -1;
 function edit(index) {
     const value = imageUrl[index].img
     const name = imageUrl[index].name
+    const price = imageUrl[index].price
     document.getElementById('value').value = value
     document.getElementById('name').value = name
+    document.getElementById('price').value = price
     editIndex = index;
     document.getElementById('isCheckButton').innerHTML = 'edit'
 }
@@ -94,15 +100,24 @@ function edit(index) {
 function submit() {
     const val = document.getElementById('value').value
     const name = document.getElementById('name').value
+    const price = +document.getElementById('price').value
     if (editIndex !== -1) {
-        imageUrl[editIndex] = { img: val, name: name };
+        imageUrl[editIndex] = { img: val, name: name, price: price };
         editIndex = -1;
         document.getElementById('isCheckButton').innerHTML = 'Add'
         document.getElementById('value').value = ''
         document.getElementById('name').value = ''
+        document.getElementById('price').value = ''
     } else {
-        imageUrl.push({ img: val, name: name })
+        if (imageUrl.length === 0) {
+            imageUrl.push({ id: 0, name: name, price: price, img: val })
+
+        } else {
+            const maxId = Math.max(...imageUrl.map(item => item.id))
+            imageUrl.push({ id: maxId + 1, name: name, price: price, img: val })
+        }
         document.getElementById('value').value = ''
+        document.getElementById('price').value = ''
         document.getElementById('name').value = ''
     }
     render(imageUrl)
